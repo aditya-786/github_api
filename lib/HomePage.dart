@@ -39,10 +39,12 @@ class _HomePageState extends State<HomePage> {
           itemBuilder: (BuildContext context, int index) {
             return Card(
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: <Widget>[
                   ListTile(
-                    leading: Image(
-                      image: NetworkImage(data[index]["avatar_url"]),
+                    leading: CircleAvatar(
+                      radius: 25,
+                      backgroundImage: NetworkImage(data[index]["avatar_url"]),
                     ),
                     title: Text(data[index]["login"]),
                     subtitle: Text(data[index]["url"]),
